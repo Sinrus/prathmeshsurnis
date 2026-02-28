@@ -53,7 +53,7 @@ const experience: TimelineEntry[] = [
 
 function EntryCard({ item }: { item: TimelineEntry }) {
   return (
-    <div className={`flex items-center justify-between gap-6 ${
+    <div className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 ${
       item.current ? "bg-primary/5 border border-primary/20 rounded-lg p-5 -mx-5" : ""
     }`}>
       <div>
@@ -90,7 +90,7 @@ function EntryCard({ item }: { item: TimelineEntry }) {
         />
       )}
       {item.logos && (
-        <div className="flex items-center gap-6 shrink-0">
+        <div className="flex items-center gap-4 sm:gap-6 shrink-0">
           {item.logos.map((logo: string, i: number) => (
             <Image
               key={i}
@@ -98,7 +98,7 @@ function EntryCard({ item }: { item: TimelineEntry }) {
               alt={item.title}
               width={160}
               height={40}
-              className={`shrink-0 ${item.imgClassName || ""}`}
+              className={`max-w-[100px] sm:max-w-none h-auto ${item.imgClassName || ""}`}
             />
           ))}
         </div>
