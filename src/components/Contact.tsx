@@ -66,68 +66,24 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Contact Form */}
-        <div className="px-6 sm:px-12 py-12 sm:py-16">
+        {/* Contact Form CTA */}
+        <div className="px-6 sm:px-12 py-12 sm:py-16 flex flex-col justify-center">
           <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium mb-8">
             Send a message
           </div>
-          <form
-            action="https://formspree.io/f/placeholder"
-            method="POST"
-            className="space-y-8"
+          <p className="font-editorial text-lg sm:text-xl leading-relaxed tracking-tight mb-10">
+            Have a project in mind or want to collaborate? Fill out my contact form and I&apos;ll get back to you as soon as possible.
+          </p>
+          <a
+            href="https://forms.fillout.com/t/jkYdTBFByLus"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 text-xs tracking-[0.1em] uppercase font-medium text-foreground hover:text-primary transition-colors group"
           >
-            <div className="floating-label-group">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder=" "
-                className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground focus:outline-none focus:border-primary transition-colors text-sm"
-              />
-              <label htmlFor="name">Name</label>
-            </div>
-            <div className="floating-label-group">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder=" "
-                className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground focus:outline-none focus:border-primary transition-colors text-sm"
-              />
-              <label htmlFor="email">Email</label>
-            </div>
-            <div className="floating-label-group">
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                required
-                placeholder=" "
-                className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground focus:outline-none focus:border-primary transition-colors text-sm"
-              />
-              <label htmlFor="subject">Subject</label>
-            </div>
-            <div className="floating-label-group">
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                required
-                placeholder=" "
-                className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground focus:outline-none focus:border-primary transition-colors resize-none text-sm"
-              />
-              <label htmlFor="message">Message</label>
-            </div>
-            <button
-              type="submit"
-              className="inline-flex items-center gap-2.5 text-xs tracking-[0.1em] uppercase font-medium text-foreground hover:text-primary transition-colors group"
-            >
-              Send Message
-              <span className="w-8 h-px bg-current transition-all group-hover:w-12" />
-            </button>
-          </form>
+            Fill Out the Form
+            <Send size={14} className="transition-transform group-hover:translate-x-1" />
+            <span className="w-8 h-px bg-current transition-all group-hover:w-12" />
+          </a>
         </div>
       </div>
     </section>
