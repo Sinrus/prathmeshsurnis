@@ -16,7 +16,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Prathmesh Surnis — AI Success Manager | Making AI Work for Businesses",
+  title: "Prathmesh Pradip Surnis",
   description:
     "I help businesses adopt AI that actually delivers results. From strategy to implementation — AI consulting, workshops, and business process optimization.",
   keywords: [
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     "German SME",
     "Prathmesh Surnis",
   ],
-  authors: [{ name: "Prathmesh Surnis" }],
+  authors: [{ name: "Prathmesh Pradip Surnis" }],
   openGraph: {
-    title: "Prathmesh Surnis — AI Success Manager",
+    title: "Prathmesh Pradip Surnis — AI Success Manager",
     description:
       "I help businesses adopt AI that actually delivers results. From strategy to implementation.",
     type: "website",
