@@ -1,26 +1,358 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f0e8;
+  --foreground: #0a0a0a;
+  --card: #f5f0e8;
+  --card-foreground: #0a0a0a;
+  --primary: #8b1a1a;
+  --primary-foreground: #f5f0e8;
+  --secondary: #8a8578;
+  --secondary-foreground: #f5f0e8;
+  --muted: #ece7df;
+  --muted-foreground: #8a8578;
+  --border: #d4cfc4;
+  --accent: #8b1a1a;
+  --accent-foreground: #f5f0e8;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #f5f0e8;
+  --card: #141414;
+  --card-foreground: #f5f0e8;
+  --primary: #c43a3a;
+  --primary-foreground: #0a0a0a;
+  --secondary: #8a8578;
+  --secondary-foreground: #0a0a0a;
+  --muted: #1a1a1a;
+  --muted-foreground: #8a8578;
+  --border: #2a2723;
+  --accent: #c43a3a;
+  --accent-foreground: #0a0a0a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-playfair);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Noise texture overlay */
+.noise {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Section styling */
+section {
+  scroll-margin-top: 8rem;
+}
+
+/* Serif heading utility */
+.font-editorial {
+  font-family: var(--font-serif), 'Playfair Display', serif;
+}
+
+/* ========================= */
+/* KEYFRAME ANIMATIONS       */
+/* ========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================= */
+/* ANIMATION UTILITIES       */
+/* ========================= */
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease both;
+}
+
+.animate-fade-down {
+  animation: fadeDown 1s ease both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease both;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease both;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.8s ease both;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease both;
+}
+
+.animate-pulse-line {
+  animation: pulse 2s ease infinite;
+}
+
+/* Hero stagger */
+.hero-stagger-1 { animation-delay: 0.2s; }
+.hero-stagger-2 { animation-delay: 0.4s; }
+.hero-stagger-3 { animation-delay: 0.6s; }
+.hero-stagger-4 { animation-delay: 0.8s; }
+.hero-stagger-5 { animation-delay: 1s; }
+
+/* Ticker */
+.ticker-track {
+  display: flex;
+  gap: 60px;
+  animation: tickerScroll 25s linear infinite;
+  will-change: transform;
+}
+
+/* ========================= */
+/* SCROLL REVEAL              */
+/* ========================= */
+
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease,
+              transform 0.8s ease;
+}
+
+.scroll-hidden-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease,
+              transform 0.8s ease;
+}
+
+.scroll-hidden-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease,
+              transform 0.8s ease;
+}
+
+.scroll-hidden-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.8s ease,
+              transform 0.8s ease;
+}
+
+.scroll-visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* ========================= */
+/* STAGGER DELAYS             */
+/* ========================= */
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* ========================= */
+/* EDITORIAL NAV UNDERLINE    */
+/* ========================= */
+
+.nav-link-editorial {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link-editorial::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-link-editorial:hover::after,
+.nav-link-editorial.active::after {
+  width: 100%;
+}
+
+/* ========================= */
+/* FLOATING LABELS (underline) */
+/* ========================= */
+
+.floating-label-group {
+  position: relative;
+}
+
+.floating-label-group input,
+.floating-label-group textarea {
+  padding-top: 1.5rem;
+}
+
+.floating-label-group label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.floating-label-group textarea ~ label {
+  top: 1.5rem;
+}
+
+.floating-label-group input:focus ~ label,
+.floating-label-group input:not(:placeholder-shown) ~ label,
+.floating-label-group textarea:focus ~ label,
+.floating-label-group textarea:not(:placeholder-shown) ~ label {
+  top: 0.25rem;
+  transform: translateY(0);
+  font-size: 0.7rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* ========================= */
+/* ACCESSIBILITY              */
+/* ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-hidden,
+  .scroll-hidden-left,
+  .scroll-hidden-right,
+  .scroll-hidden-scale {
+    opacity: 1;
+    transform: none;
+  }
+
+  .ticker-track {
+    animation: none;
+  }
 }
