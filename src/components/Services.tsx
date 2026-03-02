@@ -4,40 +4,40 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const services = [
   {
-    title: "AI Strategy & Consulting",
+    title: "AI Strategy & Roadmapping",
     description:
-      "Helping organizations define their AI roadmap — from identifying high-value use cases to building a scalable adoption strategy.",
+      "Defining AI roadmaps — from identifying high-value use cases to building scalable adoption strategies that align with business goals.",
     tag: "Strategy",
   },
   {
     title: "Business Process Optimization",
     description:
-      "Analyzing existing workflows and designing AI-powered solutions that automate, accelerate, and improve decision-making.",
+      "Analyzing workflows and designing AI-powered solutions that automate, accelerate, and improve organizational decision-making.",
     tag: "Optimization",
   },
   {
-    title: "AI Use Case Identification",
+    title: "Innovation Management",
     description:
-      "Collaborating with business units to discover, evaluate, and prioritize AI opportunities that deliver measurable ROI.",
-    tag: "Discovery",
+      "Discovering, evaluating, and prioritizing innovation opportunities across business units — connecting emerging technology to real needs.",
+    tag: "Innovation",
   },
   {
-    title: "Innovation Workshops & Training",
+    title: "Workshops & Enablement",
     description:
-      "Designing and facilitating interactive workshops that empower teams to understand, adopt, and leverage AI tools effectively.",
+      "Designing and facilitating interactive sessions that empower teams to understand, adopt, and leverage AI tools and new ways of working.",
     tag: "Enablement",
   },
   {
-    title: "AI Implementation Support",
+    title: "New Business Development",
     description:
-      "Translating strategy into action — guiding teams from pilot projects to production-ready AI workflows and assistants.",
-    tag: "Implementation",
+      "Identifying new market opportunities, analyzing competitive landscapes, and building strategic frameworks for growth and expansion.",
+    tag: "Growth",
   },
   {
-    title: "Stakeholder Management",
+    title: "Stakeholder & Cross-Functional Leadership",
     description:
-      "Bridging the gap between technical and business teams, translating user feedback into clear product requirements.",
-    tag: "Communication",
+      "Bridging the gap between technical and business teams — translating complex ideas into clear strategies and actionable outcomes.",
+    tag: "Leadership",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function Services() {
           What I<br />Do
         </h2>
         <p className="font-editorial text-xl sm:text-2xl font-normal leading-[1.4] tracking-tight pt-4 md:pt-4">
-          I don&apos;t just talk about AI — I help businesses implement it. From strategy consulting to hands-on workshops, here&apos;s how I create impact.
+          These are the areas where I bring depth and hands-on experience — from AI strategy to innovation management and beyond.
         </p>
       </div>
 

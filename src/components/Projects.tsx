@@ -42,7 +42,7 @@ export default function Projects() {
   const { ref: featuredRef, isVisible: featuredVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section id="projects">
+    <section id="projects" className="bg-muted">
       {/* Section Header — editorial 2-col */}
       <div
         ref={headerRef}
@@ -54,7 +54,7 @@ export default function Projects() {
           Selected<br />Works
         </h2>
         <p className="font-editorial text-xl sm:text-2xl font-normal leading-[1.4] tracking-tight pt-4 md:pt-4">
-          From enterprise AI at Schaeffler to startup consulting — a curated collection of projects that define my approach to making AI work.
+          From enterprise AI to market strategy and research — a curated collection of projects at the intersection of AI, innovation, and business development.
         </p>
       </div>
 
@@ -85,26 +85,21 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Featured — asymmetric block */}
+      {/* Featured — editorial full-width block */}
       <div
         ref={featuredRef}
-        className={`grid grid-cols-1 lg:grid-cols-[2fr_1fr] border-b border-border min-h-[400px] sm:min-h-[500px] ${
+        className={`border-b border-border px-6 sm:px-12 py-16 sm:py-24 ${
           featuredVisible ? "scroll-visible" : "scroll-hidden"
         }`}
       >
-        <div className="bg-gradient-to-br from-[#1a2332] to-[#0f1923] relative flex items-center justify-center overflow-hidden min-h-[300px]">
-          <span className="font-editorial font-black text-5xl sm:text-7xl md:text-[80px] text-white/[0.04] tracking-tight select-none">
-            FEATURED WORK
-          </span>
+        <div className="text-[10px] tracking-[0.15em] uppercase text-primary font-medium mb-8">
+          Featured Work — {featured.tag}
         </div>
-        <div className="px-6 sm:px-12 py-12 sm:py-16 flex flex-col justify-center lg:border-l border-border">
-          <div className="text-[10px] tracking-[0.15em] uppercase text-primary font-medium mb-5">
-            {featured.tag}
-          </div>
-          <h3 className="font-editorial text-2xl sm:text-4xl font-bold tracking-tight leading-tight mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 md:gap-16">
+          <h3 className="font-editorial text-3xl sm:text-4xl md:text-[44px] font-bold tracking-tight leading-tight">
             {featured.title}
           </h3>
-          <p className="text-sm text-muted-foreground leading-[1.7] font-light">
+          <p className="text-sm text-muted-foreground leading-[1.8] font-light md:pt-2">
             {featured.description}
           </p>
         </div>

@@ -16,25 +16,25 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Prathmesh Pradip Surnis",
+  title: "Prathmesh Surnis — AI, Innovation & Business Development",
   description:
-    "I help businesses adopt AI that actually delivers results. From strategy to implementation — AI consulting, workshops, and business process optimization.",
+    "AI and Innovation professional at the intersection of artificial intelligence, innovation management, and new business development. Turning emerging technology into real-world impact.",
   keywords: [
-    "AI Success Manager",
     "AI Strategy",
+    "Innovation Management",
+    "New Business Development",
+    "Strategic Foresight",
     "Digital Transformation",
     "AI Adoption",
     "Business Process Optimization",
-    "Innovation Management",
-    "AI Consulting",
-    "German SME",
+    "AI & Innovation",
     "Prathmesh Surnis",
   ],
   authors: [{ name: "Prathmesh Pradip Surnis" }],
   openGraph: {
-    title: "Prathmesh Pradip Surnis — AI Success Manager",
+    title: "Prathmesh Surnis — AI, Innovation & Business Development",
     description:
-      "I help businesses adopt AI that actually delivers results. From strategy to implementation.",
+      "At the intersection of AI, innovation management, and business development. Turning emerging technology into real-world impact.",
     type: "website",
   },
 };

@@ -4,9 +4,10 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const upcomingTopics = [
   "AI Strategy",
-  "Digital Transformation",
   "Innovation Management",
-  "SME & AI",
+  "New Business Development",
+  "Career in Tech",
+  "Digital Transformation",
   "Case Studies",
 ];
 
@@ -15,7 +16,7 @@ export default function Blog() {
   const { ref: contentRef, isVisible: contentVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section id="blog">
+    <section id="blog" className="bg-muted">
       {/* Section Header */}
       <div
         ref={headerRef}
@@ -27,7 +28,7 @@ export default function Blog() {
           Blog
         </h2>
         <p className="font-editorial text-xl sm:text-2xl font-normal leading-[1.4] tracking-tight pt-4 md:pt-4">
-          Practical insights on AI adoption, innovation management, and digital transformation — no buzzwords, just real talk.
+          Thoughts on AI, innovation, business development, and building a career in tech — no buzzwords, just real talk.
         </p>
       </div>
 
@@ -53,7 +54,7 @@ export default function Blog() {
               Words are being written.
             </h3>
             <p className="text-sm text-muted-foreground font-light mt-3 max-w-md leading-relaxed">
-              I&apos;m putting together thoughts on AI adoption, strategy, and
+              I&apos;m putting together thoughts on AI, innovation, business development, and
               lessons from the field. Real stories, no fluff.
             </p>
           </div>

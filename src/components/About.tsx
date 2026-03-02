@@ -19,24 +19,25 @@ export default function About() {
             About
           </h2>
           <p className="font-editorial text-xl sm:text-2xl font-normal leading-[1.4] tracking-tight pt-4 md:pt-4">
-            I believe great AI adoption lives at the intersection of{" "}
-            <em className="text-primary">technical depth</em> and{" "}
-            <em className="text-primary">strategic thinking</em>{" "}
-            — not the hype, but the impact.
+            I work at the intersection of{" "}
+            <em className="text-primary">AI</em>,{" "}
+            <em className="text-primary">innovation management</em>, and{" "}
+            <em className="text-primary">business development</em>{" "}
+            — turning emerging technology into real-world impact.
           </p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 pt-10 border-t border-border">
           <div>
-            <div className="font-editorial font-black text-4xl sm:text-5xl tracking-tight">3+</div>
-            <div className="text-xs text-muted-foreground mt-1.5 tracking-[0.05em] uppercase">Years in AI & Innovation</div>
+            <div className="font-editorial font-black text-4xl sm:text-5xl tracking-tight">5+</div>
+            <div className="text-xs text-muted-foreground mt-1.5 tracking-[0.05em] uppercase">Innovation Projects Led</div>
           </div>
           <div>
             <div className="font-editorial font-black text-4xl sm:text-5xl tracking-tight">5+</div>
-            <div className="text-xs text-muted-foreground mt-1.5 tracking-[0.05em] uppercase">Business units served</div>
+            <div className="text-xs text-muted-foreground mt-1.5 tracking-[0.05em] uppercase">Markets Analyzed</div>
           </div>
           <div>
-            <div className="font-editorial font-black text-4xl sm:text-5xl tracking-tight">2</div>
-            <div className="text-xs text-muted-foreground mt-1.5 tracking-[0.05em] uppercase">Certifications</div>
+            <div className="font-editorial font-black text-4xl sm:text-5xl tracking-tight">TBD</div>
+            <div className="text-xs text-muted-foreground mt-1.5 tracking-[0.05em] uppercase">TBD</div>
           </div>
         </div>
       </div>

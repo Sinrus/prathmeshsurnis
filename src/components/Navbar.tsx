@@ -53,7 +53,7 @@ export default function Navbar() {
               fill
               className="object-cover object-top"
             />
-          </div><span>Prathmesh<span className="text-primary">.AI</span></span>
+          </div><span>Prathmesh Pradip Surnis</span>
         </a>
 
         {/* Desktop Nav */}
