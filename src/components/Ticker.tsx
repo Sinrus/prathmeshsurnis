@@ -2,11 +2,11 @@
 
 const items = [
   "AI Strategy",
-  "Business Process Optimization",
-  "Innovation Workshops",
-  "Use Case Identification",
-  "Stakeholder Management",
+  "Innovation Management",
+  "New Business Development",
+  "Strategic Foresight",
   "Digital Transformation",
+  "Stakeholder Management",
 ];
 
 export default function Ticker() {

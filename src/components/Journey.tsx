@@ -112,7 +112,7 @@ export default function Journey() {
   const { ref: contentRef, isVisible: contentVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section id="journey">
+    <section id="journey" className="bg-muted">
       {/* Journey — editorial 2-col header */}
       <div
         ref={headerRef}
@@ -128,44 +128,78 @@ export default function Journey() {
         </p>
       </div>
 
-      {/* Education & Experience — row-aligned grid */}
+      {/* Education & Experience — mobile: stacked sections, desktop: paired grid */}
       <div
         ref={contentRef}
-        className={`grid grid-cols-1 lg:grid-cols-2 border-b border-border ${
+        className={`border-b border-border ${
           contentVisible ? "scroll-visible" : "scroll-hidden"
         }`}
       >
-        {/* Labels */}
-        <div className="px-6 sm:px-12 pt-12 sm:pt-16 pb-8 lg:border-r border-border">
-          <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium">
-            Experience
+        {/* Mobile layout — stacked sections */}
+        <div className="lg:hidden">
+          {/* Experience section */}
+          <div className="px-6 sm:px-12 pt-12 pb-8">
+            <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium mb-8">
+              Experience
+            </div>
+            <div className="space-y-8">
+              {experience.map((exp, i) => (
+                <div key={i} className={i < experience.length - 1 ? "border-b border-border pb-8" : ""}>
+                  <EntryCard item={exp} />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="px-6 sm:px-12 pt-12 sm:pt-16 pb-8">
-          <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium">
-            Education
+
+          {/* Education section */}
+          <div className="px-6 sm:px-12 pt-8 pb-12 border-t border-border">
+            <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium mb-8">
+              Education
+            </div>
+            <div className="space-y-8">
+              {education.map((edu, i) => (
+                <div key={i} className={i < education.length - 1 ? "border-b border-border pb-8" : ""}>
+                  <EntryCard item={edu} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Paired entries — each row aligns across columns */}
-        {experience.map((exp, i) => {
-          const edu = education[i];
-          const isLast = i === experience.length - 1;
-          return (
-            <Fragment key={i}>
-              <div className={`px-6 sm:px-12 ${isLast ? "pb-12 sm:pb-16" : "pb-8"} lg:border-r border-border`}>
-                <div className={`${!isLast ? "border-b border-border pb-8" : ""}`}>
-                  <EntryCard item={exp} />
+        {/* Desktop layout — paired grid */}
+        <div className="hidden lg:grid lg:grid-cols-2">
+          {/* Labels */}
+          <div className="px-6 sm:px-12 pt-12 sm:pt-16 pb-8 lg:border-r border-border">
+            <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium">
+              Experience
+            </div>
+          </div>
+          <div className="px-6 sm:px-12 pt-12 sm:pt-16 pb-8">
+            <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium">
+              Education
+            </div>
+          </div>
+
+          {/* Paired entries — each row aligns across columns */}
+          {experience.map((exp, i) => {
+            const edu = education[i];
+            const isLast = i === experience.length - 1;
+            return (
+              <Fragment key={i}>
+                <div className={`px-6 sm:px-12 ${isLast ? "pb-12 sm:pb-16" : "pb-8"} lg:border-r border-border`}>
+                  <div className={`${!isLast ? "border-b border-border pb-8" : ""}`}>
+                    <EntryCard item={exp} />
+                  </div>
                 </div>
-              </div>
-              <div className={`px-6 sm:px-12 ${isLast ? "pb-12 sm:pb-16" : "pb-8"}`}>
-                <div className={`${!isLast ? "border-b border-border pb-8" : ""}`}>
-                  <EntryCard item={edu} />
+                <div className={`px-6 sm:px-12 ${isLast ? "pb-12 sm:pb-16" : "pb-8"}`}>
+                  <div className={`${!isLast ? "border-b border-border pb-8" : ""}`}>
+                    <EntryCard item={edu} />
+                  </div>
                 </div>
-              </div>
-            </Fragment>
-          );
-        })}
+              </Fragment>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

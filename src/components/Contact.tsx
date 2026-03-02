@@ -8,7 +8,7 @@ export default function Contact() {
   const { ref: contentRef, isVisible: contentVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section id="contact">
+    <section id="contact" className="bg-muted">
       {/* Section Header — editorial 2-col */}
       <div
         ref={headerRef}
@@ -20,7 +20,7 @@ export default function Contact() {
           Get in<br />Touch
         </h2>
         <p className="font-editorial text-xl sm:text-2xl font-normal leading-[1.4] tracking-tight pt-4 md:pt-4">
-          Whether you&apos;re looking to adopt AI in your business, need a workshop facilitator, or just want to chat about innovation — I&apos;d love to hear from you.
+          Whether you want to talk AI, innovation, career opportunities, or just grab a virtual coffee — I&apos;m always open to connecting.
         </p>
       </div>
 
@@ -67,22 +67,21 @@ export default function Contact() {
         </div>
 
         {/* Contact Form CTA */}
-        <div className="px-6 sm:px-12 py-12 sm:py-16 flex flex-col justify-center">
-          <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium mb-8">
+        <div className="bg-primary px-6 sm:px-12 py-12 sm:py-16 flex flex-col justify-center">
+          <div className="text-[10px] tracking-[0.15em] uppercase text-white/60 font-medium mb-8">
             Send a message
           </div>
-          <p className="font-editorial text-lg sm:text-xl leading-relaxed tracking-tight mb-10">
-            Have a project in mind or want to collaborate? Fill out my contact form and I&apos;ll get back to you as soon as possible.
+          <p className="font-editorial text-lg sm:text-xl leading-relaxed tracking-tight mb-10 text-white">
+            Have an idea, an opportunity, or just want to connect? Drop me a message and I&apos;ll get back to you.
           </p>
           <a
             href="https://forms.fillout.com/t/jkYdTBFByLus"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 text-xs tracking-[0.1em] uppercase font-medium text-foreground hover:text-primary transition-colors group"
+            className="inline-flex items-center gap-2.5 bg-white text-primary rounded-full px-6 py-3 text-xs tracking-[0.1em] uppercase font-medium hover:bg-white/90 transition-colors group w-fit"
           >
             Fill Out the Form
             <Send size={14} className="transition-transform group-hover:translate-x-1" />
-            <span className="w-8 h-px bg-current transition-all group-hover:w-12" />
           </a>
         </div>
       </div>
