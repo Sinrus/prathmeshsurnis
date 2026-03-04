@@ -16,7 +16,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Prathmesh Surnis — AI, Innovation & Business Development",
+  title: "Prathmesh Pradip Surnis",
   description:
     "AI and Innovation professional at the intersection of artificial intelligence, innovation management, and new business development. Turning emerging technology into real-world impact.",
   keywords: [
@@ -31,6 +31,13 @@ export const metadata: Metadata = {
     "Prathmesh Surnis",
   ],
   authors: [{ name: "Prathmesh Pradip Surnis" }],
+  icons: {
+    icon: [
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Prathmesh Surnis — AI, Innovation & Business Development",
     description:
