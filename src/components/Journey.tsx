@@ -53,8 +53,8 @@ const experience: TimelineEntry[] = [
 
 function EntryCard({ item }: { item: TimelineEntry }) {
   return (
-    <div className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 ${
-      item.current ? "bg-primary/5 border border-primary/20 rounded-lg p-5 -mx-5" : ""
+    <div className={`flex flex-row items-center justify-between gap-4 sm:gap-6 ${
+      item.current ? "" : ""
     }`}>
       <div>
         <div className="text-xs text-muted-foreground tracking-[0.05em] uppercase mb-2 flex items-center gap-2.5">
@@ -62,10 +62,10 @@ function EntryCard({ item }: { item: TimelineEntry }) {
           {item.current && (
             <>
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <span className="text-primary font-medium">Current</span>
+              <span className="text-emerald-600 dark:text-emerald-400 font-medium">Current</span>
             </>
           )}
         </div>
@@ -84,13 +84,13 @@ function EntryCard({ item }: { item: TimelineEntry }) {
         <Image
           src={item.logo}
           alt={item.title}
-          width={160}
-          height={40}
-          className="shrink-0"
+          width={200}
+          height={50}
+          className="shrink-0 max-w-[100px] sm:max-w-[140px] lg:max-w-[180px] h-auto opacity-100"
         />
       )}
       {item.logos && (
-        <div className="flex items-center gap-4 sm:gap-6 shrink-0">
+        <div className="shrink-0 flex flex-col lg:flex-row items-center gap-2 lg:gap-4">
           {item.logos.map((logo: string, i: number) => (
             <Image
               key={i}
@@ -98,7 +98,7 @@ function EntryCard({ item }: { item: TimelineEntry }) {
               alt={item.title}
               width={160}
               height={40}
-              className={`max-w-[100px] sm:max-w-none h-auto ${item.imgClassName || ""}`}
+              className={`max-w-[90px] sm:max-w-[120px] lg:max-w-[150px] h-auto opacity-100 ${item.imgClassName || ""}`}
             />
           ))}
         </div>
@@ -116,7 +116,7 @@ export default function Journey() {
       {/* Journey — editorial 2-col header */}
       <div
         ref={headerRef}
-        className={`grid grid-cols-1 md:grid-cols-2 px-6 sm:px-12 py-16 sm:py-20 border-b border-border ${
+        className={`grid grid-cols-1 md:grid-cols-[1fr_2fr] md:gap-12 px-6 sm:px-12 py-16 sm:py-20 border-b border-border ${
           headerVisible ? "scroll-visible" : "scroll-hidden"
         }`}
       >
@@ -139,13 +139,14 @@ export default function Journey() {
         <div className="lg:hidden">
           {/* Experience section */}
           <div className="px-6 sm:px-12 pt-12 pb-8">
-            <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium mb-8">
+            <div className="text-sm tracking-[0.15em] uppercase text-muted-foreground font-medium mb-8 flex items-center gap-3">
+              <span className="w-1 h-4 rounded-full bg-primary" />
               Experience
             </div>
             <div className="space-y-8">
               {experience.map((exp, i) => (
                 <div key={i} className={i < experience.length - 1 ? "border-b border-border pb-8" : ""}>
-                  <EntryCard item={exp} />
+                  <EntryCard item={exp}/>
                 </div>
               ))}
             </div>
@@ -153,13 +154,14 @@ export default function Journey() {
 
           {/* Education section */}
           <div className="px-6 sm:px-12 pt-8 pb-12 border-t border-border">
-            <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium mb-8">
+            <div className="text-sm tracking-[0.15em] uppercase text-muted-foreground font-medium mb-8 flex items-center gap-3">
+              <span className="w-1 h-4 rounded-full bg-foreground/70" />
               Education
             </div>
             <div className="space-y-8">
               {education.map((edu, i) => (
                 <div key={i} className={i < education.length - 1 ? "border-b border-border pb-8" : ""}>
-                  <EntryCard item={edu} />
+                  <EntryCard item={edu}/>
                 </div>
               ))}
             </div>
@@ -170,12 +172,14 @@ export default function Journey() {
         <div className="hidden lg:grid lg:grid-cols-2">
           {/* Labels */}
           <div className="px-6 sm:px-12 pt-12 sm:pt-16 pb-8 lg:border-r border-border">
-            <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium">
+            <div className="text-sm tracking-[0.15em] uppercase text-muted-foreground font-medium flex items-center gap-3">
+              <span className="w-1 h-4 rounded-full bg-primary" />
               Experience
             </div>
           </div>
           <div className="px-6 sm:px-12 pt-12 sm:pt-16 pb-8">
-            <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-medium">
+            <div className="text-sm tracking-[0.15em] uppercase text-muted-foreground font-medium flex items-center gap-3">
+              <span className="w-1 h-4 rounded-full bg-foreground/70" />
               Education
             </div>
           </div>
@@ -186,14 +190,18 @@ export default function Journey() {
             const isLast = i === experience.length - 1;
             return (
               <Fragment key={i}>
-                <div className={`px-6 sm:px-12 ${isLast ? "pb-12 sm:pb-16" : "pb-8"} lg:border-r border-border`}>
-                  <div className={`${!isLast ? "border-b border-border pb-8" : ""}`}>
-                    <EntryCard item={exp} />
+                <div className={`px-6 sm:px-12 ${isLast ? "pb-12 sm:pb-16" : "pb-8"} lg:border-r border-border flex`}>
+                  <div className={`flex-1 flex items-center ${!isLast ? "border-b border-border pb-8" : ""}`}>
+                    <div className="w-full">
+                      <EntryCard item={exp}/>
+                    </div>
                   </div>
                 </div>
-                <div className={`px-6 sm:px-12 ${isLast ? "pb-12 sm:pb-16" : "pb-8"}`}>
-                  <div className={`${!isLast ? "border-b border-border pb-8" : ""}`}>
-                    <EntryCard item={edu} />
+                <div className={`px-6 sm:px-12 ${isLast ? "pb-12 sm:pb-16" : "pb-8"} flex`}>
+                  <div className={`flex-1 flex items-center ${!isLast ? "border-b border-border pb-8" : ""}`}>
+                    <div className="w-full">
+                      <EntryCard item={edu}/>
+                    </div>
                   </div>
                 </div>
               </Fragment>

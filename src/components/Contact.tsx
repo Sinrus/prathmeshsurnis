@@ -12,7 +12,7 @@ export default function Contact() {
       {/* Section Header — editorial 2-col */}
       <div
         ref={headerRef}
-        className={`grid grid-cols-1 md:grid-cols-2 px-6 sm:px-12 py-16 sm:py-20 border-b border-border ${
+        className={`grid grid-cols-1 md:grid-cols-[1fr_2fr] md:gap-12 px-6 sm:px-12 py-16 sm:py-20 border-b border-border ${
           headerVisible ? "scroll-visible" : "scroll-hidden"
         }`}
       >

@@ -4,7 +4,7 @@ import Ticker from "@/components/Ticker";
 import About from "@/components/About";
 import Journey from "@/components/Journey";
 import Services from "@/components/Services";
-import Projects from "@/components/Projects";
+
 import Blog from "@/components/Blog";
 import Skills from "@/components/Skills";
 import Interests from "@/components/Interests";
@@ -24,7 +24,7 @@ export default function Home() {
         <About />
         <Journey />
         <Services />
-        <Projects />
+
         <Skills />
         <Blog />
         <Interests />

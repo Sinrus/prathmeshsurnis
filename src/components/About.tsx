@@ -14,7 +14,7 @@ export default function About() {
           aboutVisible ? "scroll-visible" : "scroll-hidden"
         }`}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] md:gap-12 mb-12">
           <h2 className="font-editorial text-4xl sm:text-5xl md:text-[56px] font-black tracking-tight leading-tight">
             About
           </h2>
@@ -25,20 +25,6 @@ export default function About() {
             <em className="text-primary">business development</em>{" "}
             — turning emerging technology into real-world impact.
           </p>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 pt-10 border-t border-border">
-          <div>
-            <div className="font-editorial font-black text-4xl sm:text-5xl tracking-tight">5+</div>
-            <div className="text-xs text-muted-foreground mt-1.5 tracking-[0.05em] uppercase">Innovation Projects Led</div>
-          </div>
-          <div>
-            <div className="font-editorial font-black text-4xl sm:text-5xl tracking-tight">5+</div>
-            <div className="text-xs text-muted-foreground mt-1.5 tracking-[0.05em] uppercase">Markets Analyzed</div>
-          </div>
-          <div>
-            <div className="font-editorial font-black text-4xl sm:text-5xl tracking-tight">TBD</div>
-            <div className="text-xs text-muted-foreground mt-1.5 tracking-[0.05em] uppercase">TBD</div>
-          </div>
         </div>
       </div>
     </section>

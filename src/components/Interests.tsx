@@ -57,7 +57,7 @@ export default function Interests() {
       {/* Section Header — editorial 2-col */}
       <div
         ref={headerRef}
-        className={`grid grid-cols-1 md:grid-cols-2 px-6 sm:px-12 py-16 sm:py-20 border-b border-border ${
+        className={`grid grid-cols-1 md:grid-cols-[1fr_2fr] md:gap-12 px-6 sm:px-12 py-16 sm:py-20 border-b border-border ${
           headerVisible ? "scroll-visible" : "scroll-hidden"
         }`}
       >
@@ -87,7 +87,7 @@ export default function Interests() {
                   {interest.title}
                 </h3>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed font-light max-w-lg">
+              <p className="text-base text-foreground/60 leading-relaxed font-normal max-w-lg">
                 {interest.description}
               </p>
             </div>

@@ -218,6 +218,23 @@ section {
   will-change: transform;
 }
 
+.ticker-track:hover,
+.ticker-track-reverse:hover {
+  animation-play-state: paused;
+}
+
+@keyframes tickerScrollReverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.ticker-track-reverse {
+  display: flex;
+  gap: 60px;
+  animation: tickerScrollReverse 28s linear infinite;
+  will-change: transform;
+}
+
 /* ========================= */
 /* SCROLL REVEAL              */
 /* ========================= */
@@ -352,7 +369,8 @@ section {
     transform: none;
   }
 
-  .ticker-track {
+  .ticker-track,
+  .ticker-track-reverse {
     animation: none;
   }
 }

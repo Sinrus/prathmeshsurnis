@@ -60,7 +60,7 @@ export default function Hero() {
       </div>
 
       {/* Mobile headshot */}
-      <div className="lg:hidden flex justify-center px-12 py-10">
+      <div className="lg:hidden flex justify-center px-12 py-5">
         <div className="hero-headshot aspect-square w-full max-w-[320px] rounded-full overflow-hidden relative ring-1 ring-border ring-offset-4 ring-offset-background">
           <Image
             src="/headshot2.jpg"
