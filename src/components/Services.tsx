@@ -16,7 +16,7 @@ const services = [
     tag: "Optimization",
   },
   {
-    title: "Innovation Management",
+    title: (<>AI-driven Innovation &<br className="sm:hidden" /> Strategic Foresight</>),
     description:
       "Discovering, evaluating, and prioritizing innovation opportunities across business units — connecting emerging technology to real needs.",
     tag: "Innovation",
@@ -50,7 +50,7 @@ export default function Services() {
       {/* Section Header — editorial 2-col */}
       <div
         ref={headerRef}
-        className={`grid grid-cols-1 md:grid-cols-2 px-6 sm:px-12 py-16 sm:py-20 border-b border-border ${
+        className={`grid grid-cols-1 md:grid-cols-[1fr_2fr] md:gap-12 px-6 sm:px-12 py-16 sm:py-20 border-b border-border ${
           headerVisible ? "scroll-visible" : "scroll-hidden"
         }`}
       >
@@ -77,10 +77,10 @@ export default function Services() {
             <div className="absolute top-4 right-8 font-editorial font-black text-[100px] sm:text-[120px] leading-none text-foreground/[0.04] select-none">
               {String(index + 1).padStart(2, "0")}
             </div>
-            <div className="text-[10px] tracking-[0.15em] uppercase text-primary font-medium mb-3.5">
+            <div className="text-[10px] tracking-[0.15em] uppercase text-primary font-medium mb-5">
               {service.tag}
             </div>
-            <h3 className="font-editorial text-2xl sm:text-[32px] font-bold tracking-tight mb-3 transition-colors duration-300 group-hover:text-primary leading-tight">
+            <h3 className="font-editorial text-[22px] sm:text-[32px] font-bold tracking-tight mb-3 transition-colors duration-300 group-hover:text-primary leading-tight">
               {service.title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-[360px] font-light">
